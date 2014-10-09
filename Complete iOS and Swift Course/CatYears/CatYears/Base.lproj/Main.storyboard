@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CatYears" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgN-OQ-uDF">
+                                <rect key="frame" x="119" y="411" width="99" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="JqY-U2-Kki"/>
+                                    <constraint firstAttribute="width" constant="99" id="lwW-HG-bBV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                <state key="normal" title="Answer">
+                                    <color key="titleColor" red="1" green="0.32829637900000003" blue="0.99588428179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonTapped" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hFG-QW-4cV"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-4m-rLu">
+                                <rect key="frame" x="121" y="360" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3eJ-mO-0V4"/>
+                                    <constraint firstAttribute="width" constant="97" id="ooz-Zz-RWA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How old is your cat?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAU-5T-RLi">
+                                <rect key="frame" x="16" y="104" width="306" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="bYb-Vo-17x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.32829637900000003" blue="0.99588428179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Years!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2a-nc-1Fz">
+                                <rect key="frame" x="110" y="35" width="119" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="LDd-fm-89v"/>
+                                    <constraint firstAttribute="width" constant="119" id="osh-ox-hWB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.32829637896760777" blue="0.99588428177536648" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="8ek-Bo-m5V">
+                                <rect key="frame" x="73" y="143" width="192" height="192"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your cat's age in cat years." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvy-cZ-Pis">
+                                <rect key="frame" x="23" y="474" width="292" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="58C-xa-ffJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.32829637900000003" blue="0.99588428179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hkb-4m-rLu" firstAttribute="top" secondItem="8ek-Bo-m5V" secondAttribute="bottom" constant="25" id="2t5-Br-Fi0"/>
+                            <constraint firstItem="UAU-5T-RLi" firstAttribute="top" secondItem="E2a-nc-1Fz" secondAttribute="bottom" constant="8" symbolic="YES" id="3HO-LJ-r1s"/>
+                            <constraint firstItem="E2a-nc-1Fz" firstAttribute="centerX" secondItem="UAU-5T-RLi" secondAttribute="centerX" id="Lld-MO-H39"/>
+                            <constraint firstItem="UAU-5T-RLi" firstAttribute="centerX" secondItem="8ek-Bo-m5V" secondAttribute="centerX" id="Oz7-bE-8ax"/>
+                            <constraint firstItem="8ek-Bo-m5V" firstAttribute="top" secondItem="UAU-5T-RLi" secondAttribute="bottom" constant="8" symbolic="YES" id="axU-Xh-Jrl"/>
+                            <constraint firstItem="E2a-nc-1Fz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="94" id="ctK-SV-EfA"/>
+                            <constraint firstItem="hkb-4m-rLu" firstAttribute="centerX" secondItem="Wvy-cZ-Pis" secondAttribute="centerX" id="eXO-uY-4z9"/>
+                            <constraint firstItem="hkb-4m-rLu" firstAttribute="trailing" secondItem="XgN-OQ-uDF" secondAttribute="trailing" id="eeS-0w-3O5"/>
+                            <constraint firstItem="8ek-Bo-m5V" firstAttribute="centerX" secondItem="hkb-4m-rLu" secondAttribute="centerX" id="gcf-FM-SjZ"/>
+                            <constraint firstItem="XgN-OQ-uDF" firstAttribute="top" secondItem="hkb-4m-rLu" secondAttribute="bottom" constant="21" id="hlv-ba-XT1"/>
+                            <constraint firstItem="E2a-nc-1Fz" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="i8X-gk-ddx"/>
+                            <constraint firstItem="8ek-Bo-m5V" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="57" id="igO-gS-YBG"/>
+                            <constraint firstItem="Wvy-cZ-Pis" firstAttribute="top" secondItem="XgN-OQ-uDF" secondAttribute="bottom" constant="8" symbolic="YES" id="jC9-81-k4G"/>
+                            <constraint firstItem="Wvy-cZ-Pis" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="7" id="kLB-AW-dc5"/>
+                            <constraint firstItem="UAU-5T-RLi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="pvG-p9-gLp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Wvy-cZ-Pis" secondAttribute="bottom" constant="77" id="q3n-Nb-qLW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerField" destination="hkb-4m-rLu" id="EwV-yx-BGr"/>
+                        <outlet property="answerLabel" destination="Wvy-cZ-Pis" id="QxE-dI-AL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cat" width="256" height="256"/>
+    </resources>
+</document>
