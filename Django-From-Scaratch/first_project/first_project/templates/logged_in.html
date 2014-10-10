@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+
+{% block sidebar %}
+    <ul>
+        <li><a href="/articles/all/">Articles</a></li>
+        <li><a href="admin/">Admin</a></li>
+        <li><a href="/accounts/log_out/">Log Out</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+     <p>Hi {{ first_name }}! You have successfully logged in!</p>
+{% endblock %}

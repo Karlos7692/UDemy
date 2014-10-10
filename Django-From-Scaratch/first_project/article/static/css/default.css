@@ -1,0 +1,23 @@
+ body {
+     text-align: center;
+}
+
+#page {
+    width: 80%;
+    text-align: left;
+    margin: 2% auto 4% auto;
+    background-color: #cdcdcd;
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+    border: 1px solid #000;
+}
+
+#content {
+    float: left;
+    width: 70%;
+    border: 1px solid red;
+    padding: 1%;
+}
