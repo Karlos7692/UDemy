@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+        <ul>
+            <li><a href="/accounts/register_user/">Register User</a></li>
+            <li><a href="/accounts/log_in/">Log In</a></li>
+        </ul>
+{% endblock %}
+
+{% block content %}
+
+<form action="/accounts/register_user/" method="post">{% csrf_token %}
+   <ul>
+   {{ form.as_ul }}
+   </ul>
+   <input type="submit" value="Submit">
+</form>
+{% endblock %}

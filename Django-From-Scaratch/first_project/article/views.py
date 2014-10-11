@@ -4,6 +4,12 @@ from django.template.loader import get_template
 from django.template import Context
 from django.views.generic import TemplateView
 from models import Article
+from models import Comment
+from forms import ArticleForm
+from forms import CommentForm
+from django.core.context_processors import csrf
+from django.http import HttpResponseRedirect
+from django.utils import timezone
 
 
 #Quick tutorial on Views
@@ -58,6 +64,59 @@ def article(request, article_id=1):
     article = Article.objects.get(id=article_id)
     return render_to_response('article.html',
         {'article' : article})
+
+
+def create_article(request):
+    values = {}
+    values.update(csrf(request))
+    values['form'] = ArticleForm()
+    page = render_to_response("create_article.html", values)
+    if request.POST:
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            page = HttpResponseRedirect('/articles/all')
+
+    return page
+
+
+def like_article(request, article_id=0):
+    if article_id:
+        article = Article.objects.get(id=article_id)
+        article.likes += 1
+        article.save()
+
+    return HttpResponseRedirect('/articles/get/%s' % article_id)
+
+
+def add_comment(request, article_id):
+
+    print article_id
+    a = Article.objects.get(id=article_id)
+
+    values = {}
+    values.update(csrf(request))
+
+    values['form'] = CommentForm()
+    values['article'] = a
+
+    page = render_to_response("add_comment.html", values)
+    print "Checking whether a form was submitted"
+    print request.method
+    if request.method == 'POST':
+        print "Form submitted"
+        f = CommentForm(request.POST)
+        if f.is_valid():
+            print "Form is valid"
+            c = f.save(commit=False)
+
+            c.pub_date = timezone.now()
+            c.article = a
+            c.save()
+            page = HttpResponseRedirect('/articles/get/%s' % article_id)
+
+    return page
+
 
 #Cookie and Session Demonstration
 def set_language(request, language='en-aus'):

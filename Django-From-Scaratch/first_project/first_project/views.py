@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
-
+from forms import MyRegistrationForm
 
 
 
@@ -34,3 +34,24 @@ def log_out(request):
 
 def invalid_log_in(request):
     return render_to_response("invalid_log_in.html")
+
+
+#User Registration:
+def register_user(request):
+    values = {}
+    values.update(csrf(request))
+    values['form'] = MyRegistrationForm()
+    page = render_to_response('register_user.html', values)
+
+    if request.method == 'POST':
+        form = MyRegistrationForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            page = HttpResponseRedirect('/accounts/register_success')
+
+    return page
+
+
+def register_success(request):
+    return render_to_response("register_success.html")
