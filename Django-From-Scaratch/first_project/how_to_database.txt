@@ -1,0 +1,11 @@
+How to Migrate Data:
+python manage.py makemigrations
+
+How To Sync Database (Migrate Models):
+python manage.py syncdb
+
+Hot to Reset ENTIRE Database:
+python manage.py reset article
+
+How to Dump Data:
+python manage.py dumpdata <app_name> --indent=<indentation_length> > article.jsonn

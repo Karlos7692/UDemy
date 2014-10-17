@@ -55,10 +55,14 @@ def articles(request):
         session_language = request.session['lang']
 
     articles = Article.objects.all()
-    return render_to_response('articles.html',
-                              {'articles' : articles,
-                              'cookie_language': cookie_language,
-                              'session_language': session_language})
+
+    values = {}
+    values.update(csrf(request))
+    values['articles'] = articles
+    values['cookie_language'] = cookie_language
+    values['session_language'] = session_language
+
+    return render_to_response('articles.html', values)
 
 def article(request, article_id=1):
     article = Article.objects.get(id=article_id)
@@ -72,7 +76,7 @@ def create_article(request):
     values['form'] = ArticleForm()
     page = render_to_response("create_article.html", values)
     if request.POST:
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             page = HttpResponseRedirect('/articles/all')
@@ -116,6 +120,18 @@ def add_comment(request, article_id):
             page = HttpResponseRedirect('/articles/get/%s' % article_id)
 
     return page
+
+#AJAX Methods
+def search_titles(request):
+    if request.method == 'POST':
+        search_text = request.POST['search_text']
+    else:
+        search_text = ''
+
+    print "|",search_text,"|"
+    articles = Article.objects.filter(title__contains=search_text)
+    print articles
+    return render_to_response('ajax_search.html', {'articles' : articles})
 
 
 #Cookie and Session Demonstration

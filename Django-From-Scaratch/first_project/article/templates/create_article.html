@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<form action="/articles/create_article/" method="post"> {% csrf_token %}
+<form action="/articles/create_article/" method="post" enctype="multipart/form-data"> {% csrf_token %}
   <ul>
       {{ form.as_ul }}
   </ul>

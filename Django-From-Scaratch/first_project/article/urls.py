@@ -1,5 +1,9 @@
 from django.conf.urls import patterns, include, url
 from views import HelloTemplate
+from api import ArticleResource
+
+article_resource = ArticleResource()
+
 urlpatterns = patterns('',
 
     #Hello World!
@@ -13,7 +17,11 @@ urlpatterns = patterns('',
     url(r'^create_article/$', 'article.views.create_article'),
     url(r'^like/(?P<article_id>\d+)/$', 'article.views.like_article'),
     url(r'^language/(?P<language>[a-z\-]+)/$', 'article.views.set_language'),
-    url(r'^add_comment/(?P<article_id>\d+)/$', 'article.views.add_comment')
+    url(r'^add_comment/(?P<article_id>\d+)/$', 'article.views.add_comment'),
+    url(r'^search/$', 'article.views.search_titles'),
+
+    #Web Services with Tasty Pie
+    url(r'^api/', include(article_resource.urls))
 
 
 )

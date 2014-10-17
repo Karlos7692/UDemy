@@ -8,10 +8,19 @@
         <li><a href="/articles/create_article/">Create Article</a></li>
         <li><a href="/admin/">Admin</a></li>
     </ul>
+
+    <h3>Search</h3>
+    {% csrf_token %}
+    <input type="text" id="search" name="search" />
+
+    <ul id="search-results">
+
+    </ul>
 {% endblock %}
 
 
-{%block content %}
+
+{% block content %}
 {% if articles.count > 0 %}
 
 <p> The cookie language is {{ cookie_language }} </p>

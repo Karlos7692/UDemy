@@ -39,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     #User defined apps
-    'article'
+    'article',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,6 +89,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+#Media Settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'article/static')
+MEDIA_URL = ''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
