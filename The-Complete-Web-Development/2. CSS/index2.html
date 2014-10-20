@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Learning CSS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    
+
+
+    .large {
+        font-size: 300%;
+    }
+
+    #green {
+        color:green;
+    }
+
+    .underlined{
+        text-decoration: underline;
+    }
+
+    .bold {
+        font-weight:bold;
+    }
+
+    .purple-box {
+        background-color: #A404AE;
+        width:200px;
+        height:300px;
+        z-index:1;
+        margin:50px 100px 30px 10px;
+    }
+
+
+
+    .green-box {
+        background-color: #295715;
+        width:400px;
+        height:200px;       
+        z-index:2;
+
+    }
+     
+    .clear {
+        clear:both;
+    }
+
+    </style> 
+
+    <!--Notes: Margins are assigned as N E S W --> 
+    <!-- Use existing margins except for specified margin eg margin-left margin-right margin-bottom margin-top-->
+ 
+</head>
+
+<body>
+
+
+<div class="purple-box">
+    <p class="large">This is some text</p>
+</div>
+
+<div class="green-box">
+    <p id="green" class="large">This is some text</p>
+</div>
+
+<div class="clear"></div>
+<p class="float-left">The third <span class="underlined bold large">word</span> in this paragraph is underlined</p>
+
+</body>
+</html>
